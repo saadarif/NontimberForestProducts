@@ -25,10 +25,10 @@ ui <- fluidPage(
     fluidRow(
         column(6,
           strong("1. Which product profits you would like to plot (horizontal axes)?"),
-          selectInput(inputId = "profits", label= "", choices = names(profits), selected = names(profits)[[1]])),
+          selectInput(inputId = "profits", label= "", choices = c("",names(profits)))),
         column(6,
           strong("2. Which species richness you would like to plot (vertical axes)?"),
-          selectInput(inputId = "richness", label= "", choices = names(richness),selected = names(richness)[[1]]))
+          selectInput(inputId = "richness", label= "", choices = c("",names(richness))))
           
         ),
       fluidPage(
