@@ -1,0 +1,26 @@
+{
+    "id": "5B126455",
+    "path": "~/Public/TimberForestProducts/app.R",
+    "project_path": "app.R",
+    "type": "r_source",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1707139562024.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "63,8",
+        "scrollLine": "47"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1707167867,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1707167867101,
+    "read_only": false,
+    "read_only_alternatives": []
+}
