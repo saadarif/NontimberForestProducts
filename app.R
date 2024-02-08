@@ -69,7 +69,7 @@ server <- function(input, output) {
           scale_y_continuous(limits = c(0, NA)) + 
           #ylab(ylabel) + 
           #xlab(xlabel) +
-          geom_smooth(method=lm , col="red", se=F) +
+          geom_smooth(method=lm , se=F) +
           theme_bw()
         }) # end of isolate  
     }, res=120)

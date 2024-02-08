@@ -3,7 +3,7 @@
     "path": "~/Public/TimberForestProducts/app.R",
     "project_path": "app.R",
     "type": "r_source",
-    "hash": "3208139300",
+    "hash": "4265058110",
     "contents": "",
     "dirty": false,
     "created": 1707139562024.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "27,84",
-        "scrollLine": "16"
+        "cursorPosition": "71,32",
+        "scrollLine": "48"
     },
     "folds": "",
-    "lastKnownWriteTime": 1707210669,
+    "lastKnownWriteTime": 1707326185,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1707210669054,
+    "last_content_update": 1707326185994,
     "read_only": false,
     "read_only_alternatives": []
 }
