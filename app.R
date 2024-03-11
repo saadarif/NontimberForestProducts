@@ -25,11 +25,11 @@ pickImage <- function (imageName) {
 
 
 #Data tidying
-timberData <- vroom("timberForestProducts.csv")  # read in the data
+timberData <- vroom("NonTimberForestProducts.csv")  # read in the data
 #tidy names 
-#timberData <- timberData %>% select_all(~gsub("\\s+|\\.", "_", .)) 
+#timberData <- timberData %>% select_all(~gsub("\\s+|\\.", "_", .)) %>% %>% rename_all(tolower)
 profits <- timberData %>% select(ends_with("USD")) #select profit data
-richness <- timberData %>% select(ends_with(c("richness", "abundance", "cover"))) # select richness, abundance and cover data
+richness <- timberData %>% select(ends_with(c("richness", "abundance", "cover", "Carbon"))) # select richness, abundance and cover data
 
 
 # Define UI for application that chooses which variables to plot
@@ -60,7 +60,7 @@ ui <- fluidPage(
 )
 
 
-# Define server logic required to draw a histogram
+# Define server logic required to draw a scatterplot
 server <- function(input, output) {
     
    timbdat<- reactive(timberData)
@@ -85,13 +85,12 @@ server <- function(input, output) {
           
           plt <- timbdat() %>%
           ggplot(aes(.data[[input$profits]], .data[[input$richness]], col=Habitat)) +
- 
-          geom_point(size=2, alpha=0.7)+
+          geom_point(size=2, alpha=0.7, na.rm=T)+
           scale_color_manual(values=c("#003f5c", "#ffa600"))+
           scale_y_continuous(limits = c(0, NA)) + 
           #ylab(ylabel) + 
           #xlab(xlabel) +
-          geom_smooth(method=lm , se=F) +
+          geom_smooth(method=lm , se=F, na.rm=T) +
           #theme_bw() + 
           theme(panel.background = element_rect(fill='transparent'),
                 #plot.background = element_rect(fill='transparent', color=NA), #transparent plot bg
@@ -102,12 +101,13 @@ server <- function(input, output) {
                 legend.box.background = element_rect(fill='transparent') #transparent legend panel
           )
           
+          #plt
           #add image to plot
           plt + inset_element(p = img, left = 0.8, bottom = 0.8, right = 1, 
                           top = 0.95, clip=TRUE, on_top=FALSE) +
           theme(rect  = element_rect(fill="transparent"))
         }) # end of isolate  
-    }, res=120)
+    }, res=110)
     }) #end of button click observeEvent
 }
 
