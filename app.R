@@ -55,8 +55,19 @@ ui <- fluidPage(
         # Show a plot of the generated distribution
       fluidRow(
       column(12, plotOutput("profit_richness"))
-      )
-    #textOutput(outputId = "outResult")
+      ),
+     h2("About the data:"),
+     p("1. The data were collected from the West Bali National Park in 25x25 m plots by researchers from Oxford Brookes University and Universitas Warmadewa."),
+     p("2. or invertebrates we used pitfall and pan traps, for birds we used point sampling."),
+     p("3. Abundance indicates the total number of individuals found. Richness indicates the total number of species found.") ,
+     p("4. 0s for profits indicate that the crop is present but not productive."),
+    
+    hr(),
+    fluidRow(
+    column(12, align="center", print("copyright: M. Campera and S. Arif. Taxon images are from Phylopic.org")))
+     
+    #textOutput(outputId = "outResult"),
+    
 )
 
 
