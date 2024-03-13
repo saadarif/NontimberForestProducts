@@ -36,7 +36,7 @@ richness <- timberData %>% select(ends_with(c("richness", "abundance", "cover", 
 ui <- fluidPage(
 
     # Application title
-    titlePanel("Non-Timber Forest Products and Profits"),
+    titlePanel("Relationship between Ecosystem Health and Non-Timber Forest Product Profits"),
 
     # Sidebar with a slider input for number of bins 
     fluidRow(
@@ -44,7 +44,7 @@ ui <- fluidPage(
           strong("1. Which product profits you would like to plot (horizontal axes)?"),
           selectInput(inputId = "profits", label= "", choices = c("",names(profits)))),
         column(6,
-          strong("2. Which species richness you would like to plot (vertical axes)?"),
+          strong("2. Which indicator of biodiversity would like to plot (vertical axes)?"),
           selectInput(inputId = "richness", label= "", choices = c("",names(richness))))
           
         ),
