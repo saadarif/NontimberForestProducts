@@ -34,7 +34,8 @@ richness <- timberData %>% select(ends_with(c("richness", "abundance", "cover", 
 
 # Define UI for application that chooses which variables to plot
 ui <- fluidPage(
-
+    #change theme?
+    theme = bslib::bs_global_theme(bootswatch = "lumen"),
     # Application title
     titlePanel("Relationship between Ecosystem Health and Non-Timber Forest Product Profits"),
 
@@ -50,7 +51,7 @@ ui <- fluidPage(
         ),
       fluidPage(
       column(2,
-             actionButton("plotBtn", "3. Run Analysis"))  
+             actionButton("plotBtn", "3. Analyze!"))  
       ),
         # Show a plot of the generated distribution
       fluidRow(
@@ -73,6 +74,7 @@ ui <- fluidPage(
 
 # Define server logic required to draw a scatterplot
 server <- function(input, output) {
+  thematic::thematic_shiny()
     
    timbdat<- reactive(timberData)
   
